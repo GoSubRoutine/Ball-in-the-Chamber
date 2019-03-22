@@ -10,16 +10,17 @@
  * Forum.Processing.org/two/discussion/10680/collision-colors#Item_14
  * Studio.ProcessingTogether.com/sp/pad/export/ro.9qPrLGrYGkr2o
  */
-///<reference path="p5.global-mode.d.ts"/>
+///<reference path="../node_modules/@types/p5/global.d.ts"/>
 ///<reference path="frameResize.ts"/>
 "use strict";
-const BALLS = 4, balls = Array(BALLS), CHAMBERS = 8, chambers = Array(CHAMBERS), BG = 0o350;
+const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350;
 let bg;
+setup;
+draw; // workaround to remove unused warnings.
 function setup() {
     createCanvas(640, 440);
     frameRate(60);
     adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
-    // @ts-ignore: Cannot find name 'ellipseMode'. Did you mean 'ellipsoid'?
     ellipseMode(CENTER).rectMode(CORNER).colorMode(RGB);
     strokeWeight(Ball.BOLD).stroke(Ball.STROKE);
     bg = color(BG);
@@ -60,13 +61,13 @@ class Ball {
     static get STROKE() {
         // @ts-ignore: The operand of a delete operator cannot be a read-only property.
         delete this.STROKE;
-        // @ts-ignore: Cannot assign to 'STROKE' because it is a constant or a read-only property.
+        // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.
         return this.STROKE = color(0);
     }
     static get INIT_FILL() {
         // @ts-ignore: The operand of a delete operator cannot be a read-only property.
         delete this.INIT_FILL;
-        // @ts-ignore: Cannot assign to 'STROKE' because it is a constant or a read-only property.
+        // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.
         return this.INIT_FILL = color(0xff);
     }
     script() {
@@ -81,7 +82,6 @@ class Ball {
         return this;
     }
     display() {
-        // @ts-ignore: Property 'ellipse' does not exist on type 'void'.
         fill(this.c).ellipse(this.x, this.y, Ball.DIM);
         return this;
     }
@@ -102,12 +102,11 @@ class Chamber {
     static get STROKE() {
         // @ts-ignore: The operand of a delete operator cannot be a read-only property.
         delete this.STROKE;
-        // @ts-ignore: Cannot assign to 'STROKE' because it is a constant or a read-only property.
+        // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.
         return this.STROKE = color(0);
     }
     display() {
-        // @ts-ignore: Property 'rect' does not exist on type 'void'.
-        fill(this.c).rect(this.x, this.y, Chamber.DIM, Chamber.DIM);
+        fill(this.c).square(this.x, this.y, Chamber.DIM);
         return this;
     }
 }

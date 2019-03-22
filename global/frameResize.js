@@ -3,7 +3,7 @@ function adjustFrameSize() {
     const frame = frameElement;
     if (frame) {
         frame.width = getDocWidth() + 'px';
-        frame.height = '0px'; // FF workaround to force scrollHeight recalculation!
+        frame.height = '0'; // FF workaround to force scrollHeight recalculation!
         frame.height = getDocHeight() + 'px';
     }
 }

@@ -26,7 +26,7 @@ function setup() {
   createCanvas(640, 440);
   frameRate(60);
 
-  expandFrame(); // workaround to resize <iframe> to have room for canvas.
+  adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
 
   // @ts-ignore: Cannot find name 'ellipseMode'. Did you mean 'ellipsoid'?
   ellipseMode(CENTER).rectMode(CORNER).colorMode(RGB);

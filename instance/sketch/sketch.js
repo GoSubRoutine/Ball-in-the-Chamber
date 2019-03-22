@@ -29,7 +29,7 @@ var ball_chamber;
 /// <reference path="../utils/frameResize.ts"/>
 /// <reference path="../classes/ball.ts"/>
 (function (ball_chamber) {
-    var expandFrame = frame_utils.expandFrame;
+    var adjustFrameSize = frame_utils.adjustFrameSize;
     var Ball = ball_chamber.Ball;
     var Chamber = ball_chamber.Chamber;
     function sketch(p) {
@@ -38,7 +38,7 @@ var ball_chamber;
         p.setup = function () {
             this.createCanvas(640, 440);
             this.frameRate(60);
-            expandFrame(); // workaround to resize <iframe> to have room for canvas.
+            adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
             this.ellipseMode(this.CENTER).rectMode(this.CORNER).colorMode(this.RGB);
             this.strokeWeight(Ball.BOLD).stroke(Ball.STROKE);
             bg = this.color(BG);

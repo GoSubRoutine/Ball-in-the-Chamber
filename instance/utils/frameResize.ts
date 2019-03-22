@@ -1,13 +1,14 @@
 namespace frame_utils {
-  export function expandFrame() {
+  export function adjustFrameSize() {
     const frame = frameElement as HTMLIFrameElement
     if (frame) {
-      frame.width  = scrollWidth()  + 'px';
-      frame.height = scrollHeight() + 'px';
+      frame.width  = getDocWidth()  + 'px';
+      frame.height = '0'; // FF workaround to force scrollHeight recalculation!
+      frame.height = getDocHeight() + 'px';
     }
   }
 
-  export function scrollWidth() {
+  export function getDocWidth() {
     return Math.max(
       document.body.scrollWidth, document.documentElement.scrollWidth,
       document.body.offsetWidth, document.documentElement.offsetWidth,
@@ -15,7 +16,7 @@ namespace frame_utils {
     );
   }
 
-  export function scrollHeight() {
+  export function getDocHeight() {
     return Math.max(
       document.body.scrollHeight, document.documentElement.scrollHeight,
       document.body.offsetHeight, document.documentElement.offsetHeight,

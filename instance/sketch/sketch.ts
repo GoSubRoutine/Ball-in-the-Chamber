@@ -15,7 +15,7 @@
 /// <reference path="../classes/ball.ts"/>
 
 namespace ball_chamber {
-  import expandFrame = frame_utils.expandFrame;
+  import adjustFrameSize = frame_utils.adjustFrameSize;
 
   import Ball = ball_chamber.Ball;
   import Chamber = ball_chamber.Chamber;
@@ -31,7 +31,7 @@ namespace ball_chamber {
       this.createCanvas(640, 440);
       this.frameRate(60);
 
-      expandFrame(); // workaround to resize <iframe> to have room for canvas.
+      adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
 
       this.ellipseMode(this.CENTER).rectMode(this.CORNER).colorMode(this.RGB);
       this.strokeWeight(Ball.BOLD).stroke(Ball.STROKE);

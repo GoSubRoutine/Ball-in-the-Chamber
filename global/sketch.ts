@@ -1,14 +1,17 @@
 /**
- * Ball in the Chamber (v1.0.1) (Global Mode)
+ * Ball in the Chamber (v2.0) (Global Mode)
  * GoToLoop (2017-Nov-13)
+ *
+ * Discourse.Processing.org/t/types-p5-not-find-like-class-in-typescript/9475
+ * GitHub.com/GoSubRoutine/Ball-in-the-Chamber
+ * GoSubRoutine.GitHub.io/Ball-in-the-Chamber
  *
  * Forum.Processing.org/two/discussion/24978/
  * issues-passing-an-instance-of-one-class-into-another-class-in-p5-js#Item_7
  *
- * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
- *
  * Forum.Processing.org/two/discussion/10680/collision-colors#Item_14
  * Studio.ProcessingTogether.com/sp/pad/export/ro.9qPrLGrYGkr2o
+ * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
  */
 
 ///<reference path="../node_modules/@types/p5/global.d.ts"/>
@@ -20,36 +23,36 @@ import * as p5 from "../node_modules/@types/p5/index";
 
 const BALLS = 4, balls = Array<Ball>(BALLS).fill(null!),
       CHAMBERS = 8, chambers = Array<Chamber>(CHAMBERS).fill(null!),
-      BG = 0o350;
+      BG = 0o350, OUTLINE = 0, BOLD = 2;
 
 let bg: p5.Color;
 
 setup; draw; // workaround to remove unused warnings.
 
 function setup() {
-  createCanvas(640, 440);
-  frameRate(60);
+  createCanvas(640, 440).mousePressed(() => balls.forEach(b => b.respawn()));
 
   adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
 
   ellipseMode(CENTER).rectMode(CORNER).colorMode(RGB);
-  strokeWeight(Ball.BOLD).stroke(Ball.STROKE);
+  stroke(OUTLINE).strokeWeight(BOLD);
 
   bg = color(BG);
 
-  balls[0] = new Ball(50,  50,  4, 2);
-  balls[1] = new Ball(50,  80,  3, 5);
-  balls[2] = new Ball(100, 150, 4, 5);
-  balls[3] = new Ball(300, 300, 6, 2);
+  for (let i = 0; i < BALLS; balls[i++] = new Ball().respawn());
 
-  chambers[0] = new Chamber(1,   1,   'red');
-  chambers[1] = new Chamber(599, 1,   'lightgreen');
-  chambers[2] = new Chamber(1,   399, 'blue');
-  chambers[3] = new Chamber(599, 399, 'pink');
-  chambers[4] = new Chamber(300, 1,   'yellow');
-  chambers[5] = new Chamber(300, 399, 'cyan');
-  chambers[6] = new Chamber(1,   199, 'orange');
-  chambers[7] = new Chamber(599, 199, 'magenta');
+  const bo = round(BOLD/2), dim = Chamber.DIM + bo,
+        wx = width - dim, hy = height - dim,
+        cx = wx >> 1, cy = hy >> 1;
+
+  chambers[0] = new Chamber(bo, bo, 'red');
+  chambers[1] = new Chamber(wx, bo, 'lightgreen');
+  chambers[2] = new Chamber(bo, hy, 'blue');
+  chambers[3] = new Chamber(wx, hy, 'pink');
+  chambers[4] = new Chamber(cx, bo, 'yellow');
+  chambers[5] = new Chamber(cx, hy, 'cyan');
+  chambers[6] = new Chamber(bo, cy, 'orange');
+  chambers[7] = new Chamber(wx, cy, 'magenta');
 }
 
 function draw() {
@@ -70,17 +73,11 @@ function draw() {
 class Ball {
   static readonly DIM = 25;
   static readonly RAD = Ball.DIM >> 1;
-  static readonly BOLD = 2;
-
-  static get STROKE(): p5.Color {
-    // @ts-ignore: The operand of a delete operator cannot be a read-only property.
-    delete this.STROKE;
-    // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.
-    return this.STROKE = color(0);
-  }
+  static readonly MIN_SPD = 2;
+  static readonly MAX_SPD = 6 + 1;
 
   static get INIT_FILL(): p5.Color {
-    // @ts-ignore: The operand of a delete operator cannot be a read-only property.
+    // @ts-ignore: Operand of a delete operator cannot be a read-only property.
     delete this.INIT_FILL;
     // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.
     return this.INIT_FILL = color(0xff);
@@ -88,7 +85,20 @@ class Ball {
 
   c = Ball.INIT_FILL;
 
-  constructor(public x=0, public y=0, public vx=1, public vy=1) {}
+  constructor(public x=Ball.DIM, public y=Ball.DIM, public vx=1, public vy=1) {}
+
+  respawn() {
+    const { DIM, MIN_SPD, MAX_SPD } = Ball,
+          d = DIM << 1, w = width - d, h = height - d;
+
+    this.x = ~~random(d, w);
+    this.y = ~~random(d, h);
+    this.vx = ~~random(MIN_SPD, MAX_SPD) * (random() < .5 && -1 || 1);
+    this.vy = ~~random(MIN_SPD, MAX_SPD) * (random() < .5 && -1 || 1);
+    this.c = Ball.INIT_FILL;
+
+    return this;
+  }
 
   script() {
     return this.update().display();
@@ -107,7 +117,7 @@ class Ball {
   }
 
   colliding(c: Chamber) {
-    const { RAD } = c.constructor as typeof Chamber;
+    const { RAD } = c.constructor as typeof Chamber; // const RAD = Chamber.RAD;
     return sq(c.x + RAD - this.x) + sq(c.y + RAD - this.y) < sq(RAD + Ball.RAD);
   }
 }
@@ -115,16 +125,12 @@ class Ball {
 class Chamber {
   static readonly DIM = 40;
   static readonly RAD = Ball.DIM >> 1;
-  static readonly BOLD = 2;
 
-  static get STROKE(): p5.Color {
-    // @ts-ignore: The operand of a delete operator cannot be a read-only property.
-    delete this.STROKE;
-    // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.
-    return this.STROKE = color(0);
+  c: p5.Color;
+
+  constructor(public x=0, public y=0, c: any=0) {
+    this.c = color(c);
   }
-
-  constructor(public x=0, public y=0, public c: any) {}
 
   display() {
     fill(this.c).square(this.x, this.y, Chamber.DIM);

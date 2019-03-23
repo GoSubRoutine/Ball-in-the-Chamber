@@ -16,10 +16,10 @@
 
 import * as p5 from "node_modules/@types/p5/index";
 
-import Ball from "classes/ball";
-import Chamber from "classes/chamber";
+import Ball from "./classes/ball";
+import Chamber from "./classes/chamber";
 
-import adjustFrameSize from "utils/frameResize";
+import adjustFrameSize from "./utils/frameResize";
 
 console.log(import.meta);
 

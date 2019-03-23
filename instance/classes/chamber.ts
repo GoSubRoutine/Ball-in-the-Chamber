@@ -1,20 +1,18 @@
-/// <reference path="../typings/p5.d.ts"/>
+import * as p5 from "../../node_modules/@types/p5/index";
+console.log(import.meta);
 
-namespace ball_chamber {
-  export class Chamber {
-    static readonly DIM = 40;
-    static readonly RAD = Chamber.DIM >> 1;
-    static readonly BOLD = 2;
+export default class Chamber {
+  static readonly DIM = 40;
+  static readonly RAD = Chamber.DIM >> 1;
 
-    static STROKE: p5.Color;
+  c: p5.Color;
 
-    constructor(public p: p5, public x=0, public y=0, public c: any) {
-      Chamber.STROKE instanceof p5.Color || (Chamber.STROKE = p.color(0));
-    }
+  constructor(public p: p5, public x=0, public y=0, c: any=0) {
+    this.c = p.color(c);
+  }
 
-    display() {
-      this.p.fill(this.c).rect(this.x, this.y, Chamber.DIM, Chamber.DIM);
-      return this;
-    }
+  display() {
+    this.p.fill(this.c).square(this.x, this.y, Chamber.DIM);
+    return this;
   }
 }

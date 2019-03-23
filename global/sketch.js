@@ -13,8 +13,8 @@
  * Studio.ProcessingTogether.com/sp/pad/export/ro.9qPrLGrYGkr2o
  * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
  */
-///<reference path="../node_modules/@types/p5/global.d.ts"/>
-///<reference path="frameResize.ts"/>
+/// <reference path="../node_modules/@types/p5/global.d.ts"/>
+/// <reference path="frameResize.ts"/>
 "use strict";
 const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, BOLD = 2;
 let bg;
@@ -110,4 +110,4 @@ class Chamber {
     }
 }
 Chamber.DIM = 40;
-Chamber.RAD = Ball.DIM >> 1;
+Chamber.RAD = Chamber.DIM >> 1;

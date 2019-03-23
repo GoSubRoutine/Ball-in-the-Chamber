@@ -14,8 +14,8 @@
  * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
  */
 
-///<reference path="../node_modules/@types/p5/global.d.ts"/>
-///<reference path="frameResize.ts"/>
+/// <reference path="../node_modules/@types/p5/global.d.ts"/>
+/// <reference path="frameResize.ts"/>
 
 "use strict";
 
@@ -124,7 +124,7 @@ class Ball {
 
 class Chamber {
   static readonly DIM = 40;
-  static readonly RAD = Ball.DIM >> 1;
+  static readonly RAD = Chamber.DIM >> 1;
 
   c: p5.Color;
 

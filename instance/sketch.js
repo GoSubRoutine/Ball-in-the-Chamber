@@ -13,9 +13,9 @@
  * Studio.ProcessingTogether.com/sp/pad/export/ro.9qPrLGrYGkr2o
  * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
  */
-import Ball from "classes/ball";
-import Chamber from "classes/chamber";
-import adjustFrameSize from "utils/frameResize";
+import Ball from "./classes/ball";
+import Chamber from "./classes/chamber";
+import adjustFrameSize from "./utils/frameResize";
 console.log(import.meta);
 export default function sketch(p) {
     const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, BOLD = 2;

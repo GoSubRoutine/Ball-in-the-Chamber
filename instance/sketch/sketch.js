@@ -15,14 +15,14 @@
  */
 import Ball from "../classes/ball.js";
 import Chamber from "../classes/chamber.js";
-import adjustFrameSize from "../utils/frameResize.js";
+import autoResizeFrame from "../utils/frameResize.js";
 console.log(import.meta);
 export default function sketch(p) {
     const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, WEIGHT = 2;
     let bg;
     p.setup = function () {
         this.createCanvas(640, 440).mousePressed(() => balls.forEach(b => b.respawn()));
-        adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
+        autoResizeFrame(); // workaround to resize <iframe> to have room for canvas.
         this.ellipseMode(this.CENTER).rectMode(this.CORNER).colorMode(this.RGB);
         this.stroke(OUTLINE).strokeWeight(WEIGHT);
         bg = this.color(BG);

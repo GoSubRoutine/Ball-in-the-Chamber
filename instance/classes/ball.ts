@@ -9,7 +9,7 @@ export default class Ball {
   static readonly MIN_SPD = 2;
   static readonly MAX_SPD = 6 + 1;
 
-  static INIT_FILL: p5.Color;
+  protected static INIT_FILL: p5.Color;
   c: typeof Ball.INIT_FILL;
 
   constructor(public p: p5, public x=Ball.DIM, public y=Ball.DIM, public vx=1, public vy=1) {

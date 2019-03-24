@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v2.0) (Global Mode)
+ * Ball in the Chamber (v2.0.1) (Global Mode)
  * GoToLoop (2017-Nov-13)
  *
  * Discourse.Processing.org/t/types-p5-not-find-like-class-in-typescript/9475

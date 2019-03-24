@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v2.0) (Global Mode)
+ * Ball in the Chamber (v2.0.1) (Global Mode)
  * GoToLoop (2017-Nov-13)
  *
  * Discourse.Processing.org/t/types-p5-not-find-like-class-in-typescript/9475
@@ -76,7 +76,7 @@ class Ball {
   static readonly MIN_SPD = 2;
   static readonly MAX_SPD = 6 + 1;
 
-  static get INIT_FILL(): p5.Color {
+  protected static get INIT_FILL(): p5.Color {
     // @ts-ignore: Operand of a delete operator cannot be a read-only property.
     delete this.INIT_FILL;
     // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.

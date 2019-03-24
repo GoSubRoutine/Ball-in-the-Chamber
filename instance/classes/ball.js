@@ -6,8 +6,7 @@ export default class Ball {
         this.y = y;
         this.vx = vx;
         this.vy = vy;
-        Ball.INIT_FILL || (Ball.INIT_FILL = p.color(0xff));
-        this.c = Ball.INIT_FILL;
+        this.c = Ball.INIT_FILL || (Ball.INIT_FILL = p.color(0xff));
     }
     respawn() {
         const { DIM, MIN_SPD, MAX_SPD } = Ball, { p } = this, d = DIM << 1, w = p.width - d, h = p.height - d;

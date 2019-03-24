@@ -13,8 +13,7 @@ export default class Ball {
   c: typeof Ball.INIT_FILL;
 
   constructor(public p: p5, public x=Ball.DIM, public y=Ball.DIM, public vx=1, public vy=1) {
-    Ball.INIT_FILL || (Ball.INIT_FILL = p.color(0xff));
-    this.c = Ball.INIT_FILL;
+    this.c = Ball.INIT_FILL || (Ball.INIT_FILL = p.color(0xff));
   }
 
   respawn() {

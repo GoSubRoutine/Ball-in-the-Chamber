@@ -1,5 +1,6 @@
 import * as p5 from "../../node_modules/@types/p5/index";
 import Chamber from "./chamber";
+
 console.log(import.meta);
 
 export default class Ball {

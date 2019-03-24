@@ -16,7 +16,7 @@
 /// <reference path="../node_modules/@types/p5/global.d.ts"/>
 /// <reference path="frameResize.ts"/>
 "use strict";
-const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, BOLD = 2;
+const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, WEIGHT = 2;
 let bg;
 setup;
 draw; // workaround to remove unused warnings.
@@ -24,11 +24,11 @@ function setup() {
     createCanvas(640, 440).mousePressed(() => balls.forEach(b => b.respawn()));
     adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
     ellipseMode(CENTER).rectMode(CORNER).colorMode(RGB);
-    stroke(OUTLINE).strokeWeight(BOLD);
+    stroke(OUTLINE).strokeWeight(WEIGHT);
     bg = color(BG);
     for (let i = 0; i < BALLS; balls[i++] = new Ball().respawn())
         ;
-    const bo = round(BOLD / 2), dim = Chamber.DIM + bo, wx = width - dim, hy = height - dim, cx = wx >> 1, cy = hy >> 1;
+    const bo = round(WEIGHT / 2), dim = Chamber.DIM + bo, wx = width - dim, hy = height - dim, cx = wx >> 1, cy = hy >> 1;
     chambers[0] = new Chamber(bo, bo, 'red');
     chambers[1] = new Chamber(wx, bo, 'lightgreen');
     chambers[2] = new Chamber(bo, hy, 'blue');

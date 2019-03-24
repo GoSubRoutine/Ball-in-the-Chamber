@@ -16,17 +16,17 @@
 
 import * as p5 from "node_modules/@types/p5/index";
 
-import Ball from "classes/ball";
-import Chamber from "classes/chamber";
+import Ball from "../classes/ball.js";
+import Chamber from "../classes/chamber.js";
 
-import adjustFrameSize from "utils/frameResize";
+import adjustFrameSize from "../utils/frameResize.js";
 
 console.log(import.meta);
 
 export default function sketch(p: p5) {
   const BALLS = 4, balls = Array<Ball>(BALLS).fill(null!),
         CHAMBERS = 8, chambers = Array<Chamber>(CHAMBERS).fill(null!),
-        BG = 0o350, OUTLINE = 0, BOLD = 2;
+        BG = 0o350, OUTLINE = 0, WEIGHT = 2;
 
   let bg: p5.Color;
 
@@ -36,13 +36,13 @@ export default function sketch(p: p5) {
     adjustFrameSize(); // workaround to resize <iframe> to have room for canvas.
 
     this.ellipseMode(this.CENTER).rectMode(this.CORNER).colorMode(this.RGB);
-    this.stroke(OUTLINE).strokeWeight(BOLD);
+    this.stroke(OUTLINE).strokeWeight(WEIGHT);
 
     bg = this.color(BG);
 
     for (let i = 0; i < BALLS; balls[i++] = new Ball(this).respawn());
 
-    const bo = this.round(BOLD/2), dim = Chamber.DIM + bo,
+    const bo = this.round(WEIGHT/2), dim = Chamber.DIM + bo,
           wx = this.width - dim, hy = this.height - dim,
           cx = wx >> 1, cy = hy >> 1;
 

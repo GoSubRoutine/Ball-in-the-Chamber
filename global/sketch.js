@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v2.0.1) (Global Mode)
+ * Ball in the Chamber (v2.0.2) (Global Mode)
  * GoToLoop (2017-Nov-13)
  *
  * Discourse.Processing.org/t/types-p5-not-find-like-class-in-typescript/9475
@@ -60,9 +60,7 @@ class Ball {
         this.c = Ball.INIT_FILL;
     }
     static get INIT_FILL() {
-        // @ts-ignore: Operand of a delete operator cannot be a read-only property.
         delete this.INIT_FILL;
-        // @ts-ignore: Cannot assign to 'STROKE' because it is a read-only property.
         return this.INIT_FILL = color(0xff);
     }
     respawn() {

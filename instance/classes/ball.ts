@@ -1,5 +1,5 @@
-import * as p5 from "../../node_modules/@types/p5/index";
-import Chamber from "./chamber"; // used for datatype declaration only
+import * as p5 from "node_modules/@types/p5/index";
+import Chamber from "chamber"; // used for datatype declaration only
 
 console.log(import.meta);
 

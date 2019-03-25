@@ -77,8 +77,8 @@ class Ball {
   static readonly MAX_SPD = 6 + 1;
 
   protected static get INIT_FILL(): p5.Color {
-    delete (<any>this).INIT_FILL;
-    return (<any>this).INIT_FILL = color(0xff);
+    delete (<any> this).INIT_FILL;
+    return (<any> this).INIT_FILL = color(0xff);
   }
 
   c = Ball.INIT_FILL;

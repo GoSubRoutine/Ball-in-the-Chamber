@@ -1,5 +1,5 @@
 function adjustFrameSize() {
-  const frame = frameElement as HTMLIFrameElement
+  const frame = frameElement as HTMLIFrameElement;
   if (frame) {
     frame.width  = getDocWidth()  + 'px';
     frame.height = '0'; // FF workaround to force scrollHeight recalculation!

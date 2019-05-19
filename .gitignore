@@ -1,2 +1,3 @@
 *.DS_STORE
 *.db
+package-lock.json

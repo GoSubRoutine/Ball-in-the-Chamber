@@ -29,7 +29,7 @@ export default class Ball {
         return this;
     }
     display() {
-        this.p.fill(this.c).ellipse(this.x, this.y, Ball.DIM);
+        this.p.fill(this.c).circle(this.x, this.y, Ball.DIM);
         return this;
     }
     colliding(c) {

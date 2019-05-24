@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v2.0.2) (Global Mode)
+ * Ball in the Chamber (v2.0.3) (Global Mode)
  * GoToLoop (2017-Nov-13)
  *
  * Discourse.Processing.org/t/types-p5-not-find-like-class-in-typescript/9475
@@ -110,7 +110,7 @@ class Ball {
   }
 
   display() {
-    fill(this.c).ellipse(this.x, this.y, Ball.DIM);
+    fill(this.c).circle(this.x, this.y, Ball.DIM);
     return this;
   }
 

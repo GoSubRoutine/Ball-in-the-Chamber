@@ -41,7 +41,7 @@ export default class Ball {
   }
 
   display() {
-    this.p.fill(this.c).ellipse(this.x, this.y, Ball.DIM);
+    this.p.fill(this.c).circle(this.x, this.y, Ball.DIM);
     return this;
   }
 

@@ -1,6 +1,7 @@
 /**
- * Ball in the Chamber (v2.0.3) (Global Mode)
- * GoToLoop (2017-Nov-13)
+ * Ball in the Chamber (v2.0.4) (Global Mode)
+ * Rareware0192 (2015-May-06)
+ * Mod GoToLoop (2017-Nov-13)
  *
  * Discourse.Processing.org/t/types-p5-not-find-like-class-in-typescript/9475
  * GitHub.com/GoSubRoutine/Ball-in-the-Chamber
@@ -29,14 +30,14 @@ function setup() {
     for (let i = 0; i < BALLS; balls[i++] = new Ball().respawn())
         ;
     const bo = round(WEIGHT / 2), dim = Chamber.DIM + bo, wx = width - dim, hy = height - dim, cx = wx >> 1, cy = hy >> 1;
-    chambers[0] = new Chamber(bo, bo, 'red');
-    chambers[1] = new Chamber(wx, bo, 'lightgreen');
-    chambers[2] = new Chamber(bo, hy, 'blue');
-    chambers[3] = new Chamber(wx, hy, 'pink');
-    chambers[4] = new Chamber(cx, bo, 'yellow');
-    chambers[5] = new Chamber(cx, hy, 'cyan');
-    chambers[6] = new Chamber(bo, cy, 'orange');
-    chambers[7] = new Chamber(wx, cy, 'magenta');
+    chambers[0] = new Chamber(bo, bo, 'red'); // NW
+    chambers[1] = new Chamber(wx, bo, 'springgreen'); // NE
+    chambers[2] = new Chamber(bo, hy, 'blue'); // SW
+    chambers[3] = new Chamber(wx, hy, 'pink'); // SE
+    chambers[4] = new Chamber(cx, bo, 'yellow'); // N
+    chambers[5] = new Chamber(cx, hy, 'cyan'); // S
+    chambers[6] = new Chamber(bo, cy, 'orange'); // W
+    chambers[7] = new Chamber(wx, cy, 'magenta'); // E
 }
 function draw() {
     background(bg);

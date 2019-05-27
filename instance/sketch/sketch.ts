@@ -1,6 +1,7 @@
 /**
- * Ball in the Chamber (v2.0.3) (Instance Mode)
- * GoToLoop (2017-Nov-13)
+ * Ball in the Chamber (v2.0.4) (Instance Mode)
+ * Rareware0192 (2015-May-06)
+ * Mod GoToLoop (2017-Nov-13)
  *
  * Discourse.Processing.org/t/types-p5-not-find-like-class-in-typescript/9475
  * GitHub.com/GoSubRoutine/Ball-in-the-Chamber
@@ -46,14 +47,14 @@ export default function sketch(p: p5) {
           wx = this.width - dim, hy = this.height - dim,
           cx = wx >> 1, cy = hy >> 1;
 
-    chambers[0] = new Chamber(this, bo, bo, 'red');
-    chambers[1] = new Chamber(this, wx, bo, 'lightgreen');
-    chambers[2] = new Chamber(this, bo, hy, 'blue');
-    chambers[3] = new Chamber(this, wx, hy, 'pink');
-    chambers[4] = new Chamber(this, cx, bo, 'yellow');
-    chambers[5] = new Chamber(this, cx, hy, 'cyan');
-    chambers[6] = new Chamber(this, bo, cy, 'orange');
-    chambers[7] = new Chamber(this, wx, cy, 'magenta');
+    chambers[0] = new Chamber(this, bo, bo, 'red');          // NW
+    chambers[1] = new Chamber(this, wx, bo, 'springgreen');  // NE
+    chambers[2] = new Chamber(this, bo, hy, 'blue');         // SW
+    chambers[3] = new Chamber(this, wx, hy, 'pink');         // SE
+    chambers[4] = new Chamber(this, cx, bo, 'yellow');       // N
+    chambers[5] = new Chamber(this, cx, hy, 'cyan');         // S
+    chambers[6] = new Chamber(this, bo, cy, 'orange');       // W
+    chambers[7] = new Chamber(this, wx, cy, 'magenta');      // E
   };
 
   p.draw = function (this: typeof p) {

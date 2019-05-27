@@ -22,8 +22,10 @@ export default class Ball {
 
     this.x = ~~p.random(d, w);
     this.y = ~~p.random(d, h);
+
     this.vx = ~~p.random(MIN_SPD, MAX_SPD) * (p.random() < .5 && -1 || 1);
     this.vy = ~~p.random(MIN_SPD, MAX_SPD) * (p.random() < .5 && -1 || 1);
+
     this.c = Ball.INIT_FILL;
 
     return this;

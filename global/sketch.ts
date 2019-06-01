@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v2.0.4) (Global Mode)
+ * Ball in the Chamber (v2.0.5) (Global Mode)
  * Rareware0192 (2015-May-06)
  * Mod GoToLoop (2017-Nov-13)
  *
@@ -87,7 +87,7 @@ class Ball {
   constructor(public x=Ball.DIM, public y=Ball.DIM, public vx=1, public vy=1) {}
 
   respawn() {
-    const { DIM, MIN_SPD, MAX_SPD } = Ball,
+    const { DIM, MIN_SPD, MAX_SPD, INIT_FILL } = Ball,
           d = DIM << 1, w = width - d, h = height - d;
 
     this.x = ~~random(d, w);
@@ -96,7 +96,7 @@ class Ball {
     this.vx = ~~random(MIN_SPD, MAX_SPD) * (random() < .5 && -1 || 1);
     this.vy = ~~random(MIN_SPD, MAX_SPD) * (random() < .5 && -1 || 1);
 
-    this.c = Ball.INIT_FILL;
+    this.c = INIT_FILL;
 
     return this;
   }

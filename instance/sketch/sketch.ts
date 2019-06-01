@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v2.0.4) (Instance Mode)
+ * Ball in the Chamber (v2.0.5) (Instance Mode)
  * Rareware0192 (2015-May-06)
  * Mod GoToLoop (2017-Nov-13)
  *

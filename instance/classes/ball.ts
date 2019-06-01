@@ -17,7 +17,7 @@ export default class Ball {
   }
 
   respawn() {
-    const { DIM, MIN_SPD, MAX_SPD } = Ball, { p } = this,
+    const { DIM, MIN_SPD, MAX_SPD, INIT_FILL } = Ball, { p } = this,
           d = DIM << 1, w = p.width - d, h = p.height - d;
 
     this.x = ~~p.random(d, w);
@@ -26,7 +26,7 @@ export default class Ball {
     this.vx = ~~p.random(MIN_SPD, MAX_SPD) * (p.random() < .5 && -1 || 1);
     this.vy = ~~p.random(MIN_SPD, MAX_SPD) * (p.random() < .5 && -1 || 1);
 
-    this.c = Ball.INIT_FILL;
+    this.c = INIT_FILL;
 
     return this;
   }

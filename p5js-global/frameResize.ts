@@ -1,3 +1,5 @@
+"use strict";
+
 function adjustFrameSize() {
   const frame = frameElement as HTMLIFrameElement;
 

@@ -1,0 +1,4 @@
+coffeescriptVersion: "2.4.1"
+compileOnSave: true
+compileOnSaveWithoutPreview: true
+noTopLevelFunctionWrapper: true

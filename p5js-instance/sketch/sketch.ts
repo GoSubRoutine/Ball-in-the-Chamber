@@ -34,7 +34,7 @@ export default function sketch(p: p5) {
 
   let bg: p5.Color;
 
-  p.setup = function () {
+  p.setup = function (this: typeof p) {
     this.createCanvas(W, H).mousePressed(() => balls.forEach(b => b.respawn()));
 
     autoResizeFrame(); // workaround to resize <iframe> to have room for canvas.

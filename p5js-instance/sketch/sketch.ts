@@ -15,7 +15,7 @@
  * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
  */
 
-import * as p5 from "node_modules/@types/p5/index";
+import * as p5 from "p5/index";
 
 import Ball from "../classes/ball.js";
 import Chamber from "../classes/chamber.js";

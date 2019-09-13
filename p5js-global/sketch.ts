@@ -20,7 +20,7 @@
 
 "use strict";
 
-import * as p5 from "node_modules/@types/p5/index";
+import * as p5 from "p5/index";
 
 const BALLS = 4, balls = Array<Ball>(BALLS).fill(null!),
       CHAMBERS = 8, chambers = Array<Chamber>(CHAMBERS).fill(null!),

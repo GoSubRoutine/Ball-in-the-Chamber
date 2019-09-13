@@ -1,4 +1,4 @@
-import * as p5 from "node_modules/@types/p5/index";
+import * as p5 from "p5/index";
 
 console.log(import.meta);
 

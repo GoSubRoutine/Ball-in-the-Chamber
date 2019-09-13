@@ -1,4 +1,8 @@
-*.DS_STORE
 *.db
-p5/
+*.DS_Store
+*.DS_Store?
+
 package-lock.json
+
+p5/
+processing.*

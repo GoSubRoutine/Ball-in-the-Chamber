@@ -1,6 +1,12 @@
-*.db
 *.DS_Store
 *.DS_Store?
+
+*.db
+*.lnk
+*.stackdump
+
+[Dd]esktop.ini
+$RECYCLE.BIN/
 
 package-lock.json
 

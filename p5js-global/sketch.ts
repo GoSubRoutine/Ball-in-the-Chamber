@@ -15,12 +15,10 @@
  * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
  */
 
-/// <reference path="node_modules/@types/p5/global.d.ts" />
-/// <reference path="frameResize.ts" />
-
 "use strict";
 
 import * as p5 from "p5/index";
+import * from "p5/global";
 
 const BALLS = 4, balls = Array<Ball>(BALLS).fill(null!),
       CHAMBERS = 8, chambers = Array<Chamber>(CHAMBERS).fill(null!),

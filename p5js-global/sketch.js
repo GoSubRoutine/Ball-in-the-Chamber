@@ -14,8 +14,6 @@
  * Studio.ProcessingTogether.com/sp/pad/export/ro.9qPrLGrYGkr2o
  * Bl.ocks.org/GoSubRoutine/d0b7d3058d84970e83cf8685f8e69777
  */
-/// <reference path="node_modules/@types/p5/global.d.ts" />
-/// <reference path="frameResize.ts" />
 "use strict";
 const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, WEIGHT = 2, { width: SW, height: SH } = screen, W = frameElement && SW * 31 >> 6 || SW * 63 >> 6, H = frameElement && SH * 19 >> 6 || SH * 3 >> 2;
 let bg;

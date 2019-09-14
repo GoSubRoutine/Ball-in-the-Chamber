@@ -18,7 +18,7 @@
 "use strict";
 
 import * as p5 from "p5/index";
-import * from "p5/global";
+import {} from "p5/global";
 
 const BALLS = 4, balls = Array<Ball>(BALLS).fill(null!),
       CHAMBERS = 8, chambers = Array<Chamber>(CHAMBERS).fill(null!),

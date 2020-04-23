@@ -36,7 +36,7 @@ export default sketch = function(p) {
   WEIGHT = 2;
   SW = screen.width, SH = screen.height;
   W = frameElement ? SW * 30 >> 6 : SW * 63 >> 6;
-  H = frameElement ? SH * 71 >> 8 : SH * 3 >> 2;
+  H = frameElement ? SH * 71 >> 8 : SH * 23 >> 5;
   p.setup = function() {
     var bo, cx, cy, di, hy, i, wx;
     this.size(W, H);

@@ -35,7 +35,7 @@ export default sketch = (p) ->
 
     { width: SW, height: SH } = screen
     W = if frameElement then SW * 30 >> 6 else SW * 63 >> 6
-    H = if frameElement then SH * 71 >> 8 else SH * 3 >> 2
+    H = if frameElement then SH * 71 >> 8 else SH * 23 >> 5
 
     p.setup = ->
         @size W, H

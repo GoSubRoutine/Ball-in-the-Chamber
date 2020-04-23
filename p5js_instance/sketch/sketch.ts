@@ -30,7 +30,7 @@ export default function sketch(p: p5) {
         BG = 0o350, OUTLINE = 0, WEIGHT = 2,
         { width: SW, height: SH } = screen,
         W = frameElement && SW * 30 >> 6 || SW * 63 >> 6,
-        H = frameElement && SH * 71 >> 8 || SH * 3 >> 2;
+        H = frameElement && SH * 71 >> 8 || SH * 23 >> 5;
 
   let bg: p5.Color;
 

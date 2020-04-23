@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v3.0.0) (Global Mode)
+ * Ball in the Chamber (v3.1.0) (Global Mode)
  * Rareware0192 (2015-May-06)
  * Mod GoToLoop (2017-Nov-13)
  *
@@ -24,8 +24,8 @@ const BALLS = 4, balls = Array<Ball>(BALLS).fill(null!),
       CHAMBERS = 8, chambers = Array<Chamber>(CHAMBERS).fill(null!),
       BG = 0o350, OUTLINE = 0, WEIGHT = 2,
       { width: SW, height: SH } = screen,
-      W = frameElement && SW * 31 >> 6 || SW * 63 >> 6,
-      H = frameElement && SH * 19 >> 6 || SH * 3 >> 2;
+      W = frameElement && SW * 30 >> 6 || SW * 63 >> 6,
+      H = frameElement && SH * 71 >> 8 || SH * 3 >> 2;
 
 let bg: p5.Color;
 

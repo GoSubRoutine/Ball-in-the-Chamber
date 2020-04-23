@@ -1,5 +1,5 @@
 ###
- * Ball in the Chamber (v3.0.0) (Instance Mode)
+ * Ball in the Chamber (v3.1.0) (Instance Mode)
  * Rareware0192 (2015-May-06)
  * Mod GoToLoop (2019-Jun-30)
  *
@@ -34,8 +34,8 @@ export default sketch = (p) ->
     WEIGHT = 2
 
     { width: SW, height: SH } = screen
-    W = if frameElement then SW * 31 >> 6 else SW * 63 >> 6
-    H = if frameElement then SH * 19 >> 6 else SH * 3 >> 2
+    W = if frameElement then SW * 30 >> 6 else SW * 63 >> 6
+    H = if frameElement then SH * 71 >> 8 else SH * 3 >> 2
 
     p.setup = ->
         @size W, H

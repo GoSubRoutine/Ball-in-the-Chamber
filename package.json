@@ -1,0 +1,24 @@
+{
+  "name": "ball-in-the-chamber",
+  "version": "3.1.0",
+  "author": "GoToLoop",
+  "license": "Unlicense",
+  "description": "JS Native Modules coded in TS & CS",
+  "homepage": "https://github.com/GoSubRoutine/Ball-in-the-Chamber#readme",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoSubRoutine/Ball-in-the-Chamber.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GoSubRoutine/Ball-in-the-Chamber/issues"
+  },
+  "keywords": [
+    "esm",
+    "ts",
+    "coffee"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

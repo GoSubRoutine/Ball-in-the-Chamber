@@ -12,3 +12,5 @@ package-lock.json
 
 p5/
 processing.*
+
+node_modules

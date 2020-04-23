@@ -10,8 +10,9 @@ class Chamber {
     this.c = c;
   }
 
-  void display() {
+  Chamber display() {
     fill(c);
     rect(x, y, DIM, DIM);
+    return this;
   }
 }

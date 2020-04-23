@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v3.0.0) (Java Mode / Pjs)
+ * Ball in the Chamber (v3.1.0) (Java Mode / Pjs)
  * Rareware0192 (2015-May-06)
  * Mod GoToLoop (2019-May-27)
  *
@@ -33,7 +33,7 @@ void settings() {
   final int H = JAVA? displayHeight : screen.height;
 
   if (JAVA)               size(W * 3 >> 2, H * 3 >> 2);
-  else if (frameElement)  size(W * 31 >> 6, H * 19 >> 6);
+  else if (frameElement)  size(W * 30 >> 6, H * 71 >> 8);
   else                    size(W * 63 >> 6, H * 3 >> 2);
 }
 

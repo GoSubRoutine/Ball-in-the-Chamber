@@ -1,5 +1,5 @@
 /**
- * Ball in the Chamber (v3.0.0) (Instance Mode)
+ * Ball in the Chamber (v3.1.0) (Instance Mode)
  * Rareware0192 (2015-May-06)
  * Mod GoToLoop (2017-Nov-13)
  *
@@ -19,7 +19,7 @@ import Chamber from "../classes/chamber.js";
 import autoResizeFrame from "../utils/frameResize.js";
 console.log(import.meta);
 export default function sketch(p) {
-    const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, WEIGHT = 2, { width: SW, height: SH } = screen, W = frameElement && SW * 31 >> 6 || SW * 63 >> 6, H = frameElement && SH * 19 >> 6 || SH * 3 >> 2;
+    const BALLS = 4, balls = Array(BALLS).fill(null), CHAMBERS = 8, chambers = Array(CHAMBERS).fill(null), BG = 0o350, OUTLINE = 0, WEIGHT = 2, { width: SW, height: SH } = screen, W = frameElement && SW * 30 >> 6 || SW * 63 >> 6, H = frameElement && SH * 71 >> 8 || SH * 3 >> 2;
     let bg;
     p.setup = function () {
         this.createCanvas(W, H).mousePressed(() => balls.forEach(b => b.respawn()));
